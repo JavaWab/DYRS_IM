@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file stores bootstrap properties needed by Openfire.
+    Property names must be in the format: "prop.name.is.blah=value"
+    That will be stored as:
+        <prop>
+            <name>
+                <is>
+                    <blah>value</blah>
+                </is>
+            </name>
+        </prop>
+
+    Most properties are stored in the Openfire database. A
+    property viewer and editor is included in the admin console.
+-->
+<!-- root element, all properties must be under this element -->
+<jive>
+    <adminConsole>
+        <!-- Disable either port by setting the value to -1 -->
+        <port>9090</port>
+        <securePort>9091</securePort>
+    </adminConsole>
+
+    <locale>en</locale>
+
+    <!-- Network settings. By default, Openfire will bind to all network interfaces.
+      Alternatively, you can specify a specific network interfaces that the server
+      will listen on. For example, 127.0.0.1. This setting is generally only useful
+       on multi-homed servers. -->
+    <!--
+    <network>
+        <interface></interface>
+    </network>
+    -->
+
+    <!-- SPDY  Protocol is npn.
+        (note: npn does not work with Java 8)
+        add -Xbootclasspath/p:/OPENFIRE_HOME/lib/npn-boot.jar to .vmoptions file    -->
+
+    <!--
+    <spdy>
+        <protocol>npn</protocol>
+    </spdy>
+    -->
+
+    <!-- XEP-0198 properties -->
+    <stream>
+        <management>
+            <!-- Whether stream management is offered to clients by server. -->
+            <active>true</active>
+            <!-- Number of stanzas sent to client before a stream management
+                 acknowledgement request is made. -->
+            <requestFrequency>5</requestFrequency>
+        </management>
+    </stream>
+    <!--redis config-->
+    <redis>
+        <enable>true</enable>
+        <pool>
+            <maxIdle>200</maxIdle>
+            <maxTotal>150</maxTotal>
+            <maxWait>10000</maxWait>
+        </pool>
+        <host>117.121.26.152</host>
+        <port>6379</port>
+        <password>2jhwey2zs@3ss</password>
+        <database>
+            <index>0</index>
+        </database>
+    </redis>
+    <clustering>
+        <node>ims1</node>
+        <ip>117.121.26.152</ip>
+    </clustering>
+    <connectionProvider>
+        <className>org.jivesoftware.database.DefaultConnectionProvider</className>
+    </connectionProvider>
+    <database>
+        <defaultProvider>
+            <driver>com.mysql.jdbc.Driver</driver>
+            <serverURL>jdbc:mysql://117.121.26.152:3306/openfire?rewriteBatchedStatements=true</serverURL>
+            <username encrypted="true">1e1f2fc5fd0d475f52f9a1d6eb6cc80584705609a58da3a95493f1b32bd44102</username>
+            <password encrypted="true">c1ff627d4fcd847cd9b13460a0ea0e9d8c67ed5818340de54831d5405b4a2a0243783accad2e8fa0</password>
+            <testSQL>select 1</testSQL>
+            <testBeforeUse>false</testBeforeUse>
+            <testAfterUse>false</testAfterUse>
+            <minConnections>5</minConnections>
+            <maxConnections>25</maxConnections>
+            <connectionTimeout>1.0</connectionTimeout>
+        </defaultProvider>
+    </database>
+    <oauth2>
+        <system>
+            <app>
+                <id>appClient</id>
+                <key>appSecret</key>
+                <url>http://127.0.0.1:9000/system/apps</url>
+                <user>admin</user>
+                <pwd>admin</pwd>
+            </app>
+            <user>
+                <url>http://127.0.0.1:9000/system/users</url>
+            </user>
+            <token>
+                <url>http://127.0.0.1:9999/oauth/token</url>
+            </token>
+        </system>
+    </oauth2>
+    <setup>false</setup>
+</jive>
