@@ -79,7 +79,7 @@
     <database>
         <defaultProvider>
             <driver>com.mysql.jdbc.Driver</driver>
-            <serverURL>jdbc:mysql://117.121.26.152:3306/openfire?rewriteBatchedStatements=true</serverURL>
+            <serverURL>jdbc:mysql://XXXX:3306/openfire?rewriteBatchedStatements=true</serverURL>
             <username encrypted="true">1e1f2fc5fd0d475f52f9a1d6eb6cc80584705609a58da3a95493f1b32bd44102</username>
             <password encrypted="true">c1ff627d4fcd847cd9b13460a0ea0e9d8c67ed5818340de54831d5405b4a2a0243783accad2e8fa0</password>
             <testSQL>select 1</testSQL>
