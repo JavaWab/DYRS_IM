@@ -62,7 +62,7 @@
             <maxTotal>150</maxTotal>
             <maxWait>10000</maxWait>
         </pool>
-        <host>117.121.26.152</host>
+        <host>XXXX</host>
         <port>6379</port>
         <password>2jhwey2zs@3ss</password>
         <database>
@@ -71,7 +71,7 @@
     </redis>
     <clustering>
         <node>ims1</node>
-        <ip>117.121.26.152</ip>
+        <ip>XXXX</ip>
     </clustering>
     <connectionProvider>
         <className>org.jivesoftware.database.DefaultConnectionProvider</className>
